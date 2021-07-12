@@ -1,10 +1,6 @@
 ## 在线地址
 
-**项目链接：** [www.talkxj.com](https://www.talkxj.com)
-
-**后台链接：** [www.admin.talkxj.com](https://www.admin.talkxj.com)
-
-测试账号：test@qq.com，密码：1234567，可登入后台查看
+**项目链接：** [www.xxmy.xyz](https://www.xxmy.xyz)
 
 ## 目录结构
 
@@ -40,40 +36,37 @@ SQL文件位于根目录下。
 
 **前端：** "vue" + "vuex" + "vue-router" + "axios" + "vuetify" + "element" + "echarts"
 
-**后端：** "SpringBoot" + "nginx" + "docker" + "SpringSecurity" + "Swagger2" + "MyBatisPlus" + "Mysql" + "Redis" + "elasticsearch" + "rabbitMQ" + "MaxWell" + "websocket"
+**后端：** "SpringBoot" + "nginx" + "docker" + "SpringSecurity" + "Swagger2" + "MyBatisPlus" + "Mysql" + "Redis" +"rabbitMQ" + "MaxWell" + "websocket"
 
 **其他：** 接入QQ，微博第三方登录，接入腾讯云人机验证、websocket
 
 ## 运行环境
 
-**服务器：** 阿里云2核4G CentOS7.2
+**服务器：** 阿里云1核2G Ubuntu20.04
 
-**CDN：** 阿里云全站加速
+**CDN：** 腾讯云全站加速
 
-**对象存储：** 阿里云OSS
-
-这套搭配响应速度非常快，可以做到响应100ms以下。
+**对象存储：** 七牛云对象存储
 
 ## 开发工具
 
 |开发工具|说明|
 |-|-|
 |IDEA|Java开发工具IDE|
-|VSCode|Vue开发工具IDE|
-|Navicat|MySQL远程连接工具|
+|WebStorm|Vue开发工具IDE|
+|DataGrip|MySQL远程连接工具|
 |Another Redis Desktop Manager|Redis远程连接工具|
-|X-shell|Linux远程连接工具|
-|filezilla|Linux文件上传工具|
+|Xshell|Linux远程连接工具|
+|Xftp|Linux文件上传工具|
 
 ## 开发环境
 
 |工具|版本|
 |-|-|
 |JDK|1.8|
-|MySQL|8.0.20|
-|Redis|6.0.5|
-|Elasticsearch|7.9.2|
-|RabbitMQ|3.8.5|
+|MySQL|5.7|
+|Redis|6.2.4|
+|RabbitMQ| 3.8.17 |
 
 ## 项目截图
 
@@ -101,17 +94,12 @@ SQL文件位于根目录下。
 
 - 博主用户信息ID默认为1，如需修改请到 /constant/UserConst 处修改BLOGGER_ID
 - 邮箱配置，第三方授权配置需要自己申请。
-- ElasticSearch需要自己先创建索引，项目运行环境教程中有介绍。
 
 ## 项目总结
 
 博客作为新手入门项目是十分不错的，项目所用的技术栈覆盖的也比较广，适合初学者学习。主要难点在于权限管理、第三方登录、websocket这块。做的不好的地方请大家见谅，有问题的或者有好的建议可以私聊联系我，
 
-## 关注&交流
-
-![博客技术交流群聊二维码.png](https://www.static.talkxj.com/articles/1594437310326.png)
-
-
+本项目参考[Li_fangfangfang](https://gitee.com/Li_fangfangfang)的[博客项目](https://gitee.com/Li_fangfangfang/thatblog)。
 
 
 
