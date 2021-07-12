@@ -43,7 +43,7 @@ public class CommonConst {
     /**
      * 网站域名
      */
-    public static final String URL = "https://www.talkxj.com";
+    public static final String URL = "https://www.xxmy.xyz";
 
     /**
      * 文章页面路径

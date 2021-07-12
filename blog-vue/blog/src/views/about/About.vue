@@ -10,11 +10,17 @@
         <v-avatar size="110">
           <img
             class="author-avatar"
-            src="https://www.static.talkxj.com/avatar/blogger.jpg"
+            src="https://static.qiniu.xxmy.xyz/1"
           />
         </v-avatar>
       </div>
-      <div class="about-content markdown-body" v-html="aboutContent" />
+      <div class="about-content markdown-body">
+        <p>
+          <strong>🍀个人简介</strong>
+        </p>
+        <p>好好生活</p>
+        <p>承蒙关注，感谢你们的支持...</p>
+      </div>
     </v-card>
   </div>
 </template>

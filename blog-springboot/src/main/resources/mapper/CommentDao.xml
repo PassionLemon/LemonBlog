@@ -30,39 +30,34 @@
     </select>
 
     <select id="listReplies" resultType="com.minzheng.blog.dto.ReplyDTO">
-        SELECT
-        *
-        FROM
-        (
-        SELECT
-        c.user_id,
-        u.nickname,
-        u.avatar,
-        u.web_site,
-        c.reply_id,
-        r.nickname AS reply_nickname,
-        r.web_site AS reply_web_site,
-        c.id,
-        c.parent_id,
-        c.comment_content,
-        c.create_time,
-        row_number () over ( PARTITION BY parent_id ORDER BY create_time ASC ) row_num
-        FROM
-        tb_comment c
-        JOIN tb_user_info u ON c.user_id = u.id
-        JOIN tb_user_info r ON c.reply_id = r.id
-        WHERE
-        c.is_delete = 0
-        AND
-        parent_id IN
-        (
-        <foreach collection="commentIdList" item="commentId" separator=",">
-            #{commentId}
-        </foreach>
-        )
-        ) t
-        WHERE
-        4 > row_num
+        set
+        @row_num:=0;
+        SELECT *
+        FROM (
+                 SELECT c.user_id,
+                        u.nickname,
+                        u.avatar,
+                        u.web_site,
+                        c.reply_id,
+                        r.nickname AS reply_nickname,
+                        r.web_site AS reply_web_site,
+                        c.id,
+                        c.parent_id,
+                        c.comment_content,
+                        c.create_time,
+                        @row_num:= CASE WHEN @parent_id = parent_id THEN @row_num + 1 ELSE 1 END AS row_num
+                 FROM
+                     tb_comment c
+                     JOIN tb_user_info u
+                 ON c.user_id = u.id
+                     JOIN tb_user_info r ON c.reply_id = r.id
+                 WHERE
+                     c.is_delete = 0
+                   AND parent_id IN ( 4
+                     , 5 )
+                 ORDER BY create_time
+             ) t
+        WHERE 4 > row_num
     </select>
 
     <select id="listReplyCountByCommentId" resultType="com.minzheng.blog.dto.ReplyCountDTO">
@@ -85,28 +80,24 @@
     </select>
 
     <select id="listRepliesByCommentId" resultType="com.minzheng.blog.dto.ReplyDTO">
-        SELECT
-        c.user_id,
-        u.nickname,
-        u.avatar,
-        u.web_site,
-        c.reply_id,
-        r.nickname as reply_nickname,
-        r.web_site as reply_web_site,
-        c.id,
-        c.parent_id,
-        c.comment_content,
-        c.create_time
-        FROM
-        tb_comment c
-        JOIN tb_user_info u ON c.user_id = u.id
-        JOIN tb_user_info r ON c.reply_id = r.id
-        WHERE
-        c.is_delete = 0
-        AND
-        parent_id =#{commentId}
+        SELECT c.user_id,
+               u.nickname,
+               u.avatar,
+               u.web_site,
+               c.reply_id,
+               r.nickname as reply_nickname,
+               r.web_site as reply_web_site,
+               c.id,
+               c.parent_id,
+               c.comment_content,
+               c.create_time
+        FROM tb_comment c
+                 JOIN tb_user_info u ON c.user_id = u.id
+                 JOIN tb_user_info r ON c.reply_id = r.id
+        WHERE c.is_delete = 0
+          AND parent_id = #{commentId}
         ORDER BY create_time ASC
-        LIMIT #{current},5
+            LIMIT #{current}, 5
     </select>
 
     <select id="listCommentBackDTO" resultType="com.minzheng.blog.dto.CommentBackDTO">

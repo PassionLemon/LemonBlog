@@ -32,29 +32,23 @@
     </resultMap>
 
     <select id="listUrlRoles" resultMap="RolePermissionMap">
-        SELECT
-         re.id,
-         url,
-         request_method,
-         role_label
-         FROM
-         tb_resource re
-         LEFT JOIN tb_role_resource rep on re.id = rep.resource_id
-         LEFT JOIN tb_role r on rep.role_id = r.id
-         WHERE
-         parent_id is NOT NULL
-         AND is_anonymous = 0
+        SELECT re.id,
+               url,
+               request_method,
+               role_label
+        FROM tb_resource re
+                 LEFT JOIN tb_role_resource rep on re.id = rep.resource_id
+                 LEFT JOIN tb_role r on rep.role_id = r.id
+        WHERE parent_id is NOT NULL
+          AND is_anonymous = 0
     </select>
 
     <select id="listRolesByUserInfoId" resultType="java.lang.String">
-        SELECT
-         role_label
-        FROM
-         tb_role r,
-         tb_user_role ur
-         WHERE
-         r.id = ur.role_id
-        AND ur.user_id = #{userInfoId}
+        SELECT role_label
+        FROM tb_role r,
+             tb_user_role ur
+        WHERE r.id = ur.role_id
+          AND ur.user_id = #{userInfoId}
     </select>
 
     <select id="listRoles" resultMap="RoleMap">

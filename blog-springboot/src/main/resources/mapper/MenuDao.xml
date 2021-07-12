@@ -4,21 +4,18 @@
 
 
     <select id="listMenusByUserInfoId" resultType="com.minzheng.blog.entity.Menu">
-        SELECT DISTINCT
-            m.id,
-            `name`,
-            `path`,
-            component,
-            icon,
-            is_hidden,
-            parent_id,
-            order_num
-         FROM
-            tb_user_role ur
-            JOIN tb_role_menu rm ON ur.role_id = rm.role_id
-            JOIN `tb_menu` m ON rm.menu_id = m.id
-         WHERE
-            user_id = #{userInfoId}
+        SELECT DISTINCT m.id,
+                        `name`,
+                        `path`,
+                        component,
+                        icon,
+                        is_hidden,
+                        parent_id,
+                        order_num
+        FROM tb_user_role ur
+                 JOIN tb_role_menu rm ON ur.role_id = rm.role_id
+                 JOIN `tb_menu` m ON rm.menu_id = m.id
+        WHERE user_id = #{userInfoId}
     </select>
 
 </mapper>

@@ -16,6 +16,7 @@ import com.minzheng.blog.service.UserRoleService;
 import com.minzheng.blog.utils.BeanCopyUtil;
 import com.minzheng.blog.utils.OSSUtil;
 
+import com.minzheng.blog.utils.QiNiuUtil;
 import com.minzheng.blog.utils.UserUtil;
 import com.minzheng.blog.vo.ConditionVO;
 import com.minzheng.blog.vo.EmailVO;
@@ -31,6 +32,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
@@ -72,9 +75,9 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoDao, UserInfo> impl
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public String updateUserAvatar(MultipartFile file) {
+    public String updateUserAvatar(MultipartFile file){
         // 头像上传oss，返回图片地址
-        String avatar = OSSUtil.upload(file, FilePathEnum.AVATAR.getPath());
+        String avatar = QiNiuUtil.fileUpload(file, FilePathEnum.AVATAR.getPath());
         // 更新用户信息
         UserInfo userInfo = UserInfo.builder()
                 .id(UserUtil.getLoginUser().getUserInfoId())

@@ -19,7 +19,7 @@ const routes = [
     path: "/",
     component: Home,
     meta: {
-      title: "风丶宇的个人博客"
+      title: "潇湘暮羽的个人博客"
     }
   },
   {

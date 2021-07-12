@@ -218,7 +218,7 @@ public class WebSocketServiceImpl {
      */
     public void sendVoice(VoiceVO voiceVO) throws IOException {
         // 上传语音文件
-        String content = OSSUtil.upload(voiceVO.getFile(), FilePathEnum.VOICE.getPath());
+        String content = QiNiuUtil.fileUpload(voiceVO.getFile(), FilePathEnum.VOICE.getPath());
         voiceVO.setContent(content);
         // 保存记录
         ChatRecord chatRecord = BeanCopyUtil.copyObject(voiceVO, ChatRecord.class);

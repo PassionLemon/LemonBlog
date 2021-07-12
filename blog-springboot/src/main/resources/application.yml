@@ -33,6 +33,11 @@ spring:
     host: 你的密码
     port: 6379
     password: Redis密码
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
   #mq配置
   rabbitmq:
     host: 服务器ip
@@ -89,3 +94,9 @@ aliyun:
   accessKeyId: "阿里云accessKeyId"
   accessKeySecret: "阿里云accessKeySecret"
   bucketName: "阿里云bucket名"
+# 七牛云配置
+qiniu:
+  domain: "七牛云对象存储域名" #七牛云提供的免费外网地址，1个月就会过期
+  accessKey: "七牛云accessKey"
+  secretKey: "七牛云secretKey"
+  bucketName: "七牛云bucket名"

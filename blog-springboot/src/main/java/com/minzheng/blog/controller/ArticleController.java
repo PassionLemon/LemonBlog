@@ -7,6 +7,7 @@ import com.minzheng.blog.dto.*;
 import com.minzheng.blog.enums.FilePathEnum;
 import com.minzheng.blog.service.ArticleService;
 import com.minzheng.blog.utils.OSSUtil;
+import com.minzheng.blog.utils.QiNiuUtil;
 import com.minzheng.blog.vo.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -77,7 +78,7 @@ public class ArticleController {
     @ApiImplicitParam(name = "file", value = "文章图片", required = true, dataType = "MultipartFile")
     @PostMapping("/admin/articles/images")
     public Result<String> saveArticleImages(MultipartFile file) {
-        return new Result<>(true, StatusConst.OK, "上传成功", OSSUtil.upload(file, FilePathEnum.ARTICLE.getPath()));
+        return new Result<>(true, StatusConst.OK, "上传成功", QiNiuUtil.fileUpload(file, FilePathEnum.ARTICLE.getPath()));
     }
 
     @OptLog(optType = UPDATE)

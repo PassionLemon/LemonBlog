@@ -38,7 +38,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("博客api文档")
                 .description("springboot+vue开发的博客项目")
-                .termsOfServiceUrl("https://www.talkxj.com")
+                .termsOfServiceUrl("https://www.xxmy.xyz")
                 .version("1.0")
                 .build();
     }

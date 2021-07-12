@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 
+import java.io.IOException;
 import java.util.List;
 
 import static com.minzheng.blog.constant.OptTypeConst.UPDATE;
@@ -44,7 +45,7 @@ public class UserInfoController {
     @ApiOperation(value = "修改用户头像")
     @ApiImplicitParam(name = "file", value = "用户头像", required = true, dataType = "MultipartFile")
     @PostMapping("/users/avatar")
-    public Result<String> updateUserInfo(MultipartFile file) {
+    public Result<String> updateUserInfo(MultipartFile file) throws IOException {
         return new Result<>(true, StatusConst.OK, "修改成功！", userInfoService.updateUserAvatar(file));
     }
 

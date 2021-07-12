@@ -136,7 +136,7 @@ public class CommentServiceImpl extends ServiceImpl<CommentDao, Comment> impleme
             EmailDTO emailDTO = EmailDTO.builder()
                     .email(email)
                     .subject("评论提醒")
-                    .content("您收到了一条新的回复，请前往" + url + "\n页面查看")
+                    .content("评论:"+commentVO.getCommentContent()+", 请前往" + url + "页面查看")
                     .build();
             rabbitTemplate.convertAndSend(EMAIL_EXCHANGE, "*", new Message(JSON.toJSONBytes(emailDTO), new MessageProperties()));
         }

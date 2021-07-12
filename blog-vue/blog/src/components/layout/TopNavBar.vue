@@ -4,7 +4,7 @@
     <div class="d-md-none nav-mobile-container">
       <div style="font-size:18px;font-weight:bold">
         <router-link to="/">
-          风丶宇
+          潇湘暮羽
         </router-link>
       </div>
       <div style="margin-left:auto">
@@ -18,7 +18,7 @@
     <div class="d-md-block d-none nav-container">
       <div class="float-left blog-title">
         <router-link to="/">
-          风丶宇
+          潇湘暮羽
         </router-link>
       </div>
       <div class="float-right nav-title">

@@ -5,7 +5,7 @@
       <div class="banner-container">
         <!-- 联系方式 -->
         <h1 class="blog-title animated zoomIn">
-          风丶宇的个人博客
+          潇湘暮羽的个人博客
         </h1>
         <!-- 一言 -->
         <div class="blog-intro">
@@ -16,16 +16,16 @@
           <a
             class="iconfont iconqq"
             target="_blank"
-            href="http://wpa.qq.com/msgrd?v=3&uin=1192176811&site=qq&menu=yes"
+            href="http://wpa.qq.com/msgrd?v=3&uin=1471441495&site=qq&menu=yes"
           />
           <a
             target="_blank"
-            href="https://github.com/X1192176811"
+            href="https://github.com/PassionLemon"
             class="ml-5 mr-5 iconfont icongithub"
           />
           <a
             target="_blank"
-            href="https://gitee.com/feng_meiyu"
+            href="https://gitee.com/PassionLemon"
             class="iconfont icongitee-fill-round"
           />
         </div>
@@ -150,16 +150,16 @@
               <a
                 class="iconfont iconqq"
                 target="_blank"
-                href="http://wpa.qq.com/msgrd?v=3&uin=1192176811&site=qq&menu=yes"
+                href="http://wpa.qq.com/msgrd?v=3&uin=1471441495&site=qq&menu=yes"
               />
               <a
                 target="_blank"
-                href="https://github.com/X1192176811"
+                href="https://github.com/PassionLemon"
                 class="ml-5 mr-5 iconfont icongithub"
               />
               <a
                 target="_blank"
-                href="https://gitee.com/feng_meiyu"
+                href="https://gitee.com/PassionLemon"
                 class="iconfont icongitee-fill-round"
               />
             </div>
@@ -254,7 +254,7 @@ export default {
     },
     runTime() {
       var timeold =
-        new Date().getTime() - new Date("December 12,2019").getTime();
+        new Date().getTime() - new Date("June 11,2021").getTime();
       var msPerDay = 24 * 60 * 60 * 1000;
       var daysold = Math.floor(timeold / msPerDay);
       var str = "";
@@ -331,7 +331,7 @@ export default {
   left: 0;
   right: 0;
   height: 100vh;
-  background: url("https://www.static.talkxj.com/wallhaven-g89p2.png") center
+  background: url("https://jishiqi-dev.oss-cn-hangzhou.aliyuncs.com/jishiqi/app/5c943fcb61f1e94549522e84/2021-06/ccb91d9469fd44699f047237d42223c6.jpg") center
     center / cover no-repeat;
   background-color: #49b1f5;
   background-attachment: fixed;
@@ -342,7 +342,7 @@ export default {
 .banner-container {
   margin-top: 43vh;
   line-height: 1.5;
-  color: #eee;
+  color: #3b444b;
 }
 .blog-contact a {
   color: #fff !important;

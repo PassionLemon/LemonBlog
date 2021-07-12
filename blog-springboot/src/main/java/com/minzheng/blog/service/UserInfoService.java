@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.minzheng.blog.vo.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -29,7 +30,7 @@ public interface UserInfoService extends IService<UserInfo> {
      * @param file 头像图片
      * @return 头像OSS地址
      */
-    String updateUserAvatar(MultipartFile file);
+    String updateUserAvatar(MultipartFile file) throws IOException;
 
     /**
      * 绑定用户邮箱

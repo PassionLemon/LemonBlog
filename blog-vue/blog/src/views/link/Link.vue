@@ -7,7 +7,7 @@
     <!-- 链接列表 -->
     <v-card class="blog-container">
       <div class="link-title mb-1">
-        <v-icon color="blue">mdi-link-variant</v-icon> 大佬链接
+        <v-icon color="blue">mdi-link-variant</v-icon> 友链列表(排名不分大小)
       </div>
       <v-row class="link-container">
         <v-col
@@ -33,9 +33,9 @@
         <v-icon color="blue">mdi-dots-horizontal-circle</v-icon> 添加友链
       </div>
       <blockquote>
-        <div>名称：风丶宇的个人博客</div>
-        <div>简介：成事在人 谋事在天</div>
-        <div>头像：https://www.static.talkxj.com/avatar/blogger.jpg</div>
+        <div>名称：潇湘暮羽的个人博客</div>
+        <div>简介：人生若只如初见 何事秋风悲画扇</div>
+        <div>头像：https://static.qiniu.xxmy.xyz/1</div>
       </blockquote>
       <div class="mt-5 mb-5">
         需要交换友链的可在下方留言💖
