@@ -99,7 +99,7 @@ SQL文件位于根目录下。
 
 博客作为新手入门项目是十分不错的，项目所用的技术栈覆盖的也比较广，适合初学者学习。主要难点在于权限管理、第三方登录、websocket这块。做的不好的地方请大家见谅，有问题的或者有好的建议可以私聊联系我，
 
-本项目参考[Li_fangfangfang](https://gitee.com/Li_fangfangfang)的[博客项目](https://gitee.com/Li_fangfangfang/thatblog)。
+本项目参考[Li_fangfangfang](https://gitee.com/Li_fangfangfang)的[博客项目](https://gitee.com/Li_fangfangfang/thatblog)。由于本人购买的服务器的1C2G，所以将ElasticSearch停止使用了，强行开启会导致服务器宕机。
 
-
+![开启elasticsearch服务器爆了](README.assets/开启elasticsearch服务器爆了.png)
 
