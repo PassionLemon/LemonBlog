@@ -81,6 +81,13 @@ public class ArticleController {
         return new Result<>(true, StatusConst.OK, "上传成功", QiNiuUtil.fileUpload(file, FilePathEnum.ARTICLE.getPath()));
     }
 
+    @ApiOperation(value = "上传封面图片")
+    @ApiImplicitParam(name = "file", value = "封面图片", required = true, dataType = "MultipartFile")
+    @PostMapping("/admin/cover/images")
+    public Result<String> saveCoverImages(MultipartFile file) {
+        return new Result<>(true, StatusConst.OK, "上传成功", QiNiuUtil.fileUpload(file, FilePathEnum.COVER.getPath()));
+    }
+
     @OptLog(optType = UPDATE)
     @ApiOperation(value = "恢复或删除文章")
     @PutMapping("/admin/articles")

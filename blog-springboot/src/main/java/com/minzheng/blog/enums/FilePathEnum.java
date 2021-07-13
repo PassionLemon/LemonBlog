@@ -19,6 +19,10 @@ public enum FilePathEnum {
      */
     ARTICLE("articles/", "文章图片路径"),
     /**
+     * 封面图片路径
+     */
+    COVER("cover/", "封面图片路径"),
+    /**
      * 音频路径
      */
     VOICE("voice/", "音频路径");
